@@ -1,0 +1,127 @@
+@use "../abstracts";
+
+.shop {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    transform-style: preserve-3d;
+
+    background-image: url("../../assets/img/shop/rec-bg.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.shop-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    &__menu {
+        width: 391px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    &__wrap {
+        position: absolute;
+        top: 280px;
+        right: 350px;
+    }
+
+    &__btn {
+        position: absolute;
+
+        left: 0;
+        height: 20px;
+        transition: 0.25s ease;
+
+        &:hover {
+            border-bottom: 1px solid #b09a83;
+        }
+
+        &:first-child {
+            width: 80px;
+            top: 0;
+        }
+
+        &:nth-child(2) {
+            width: 70px;
+            top: 30px;
+        }
+
+        &:nth-child(3) {
+            top: 63px;
+            width: 90px;
+        }
+
+        &:nth-child(4) {
+            top: 95px;
+            width: 100px;
+        }
+
+        &:nth-child(5) {
+            top: 125px;
+            width: 65px;
+        }
+
+        &:nth-child(6) {
+            top: 155px;
+            width: 75px;
+        }
+
+        &:nth-child(7) {
+            top: 187px;
+            width: 55px;
+        }
+
+        &:nth-child(8) {
+            top: 218px;
+            width: 98px;
+        }
+
+        &:last-child {
+            top: 250px;
+            width: 95px;
+        }
+    }
+}
+
+.shop-wraps {
+    position: fixed;
+    left: 50px;
+    top: 50px;
+}
+
+.shop-wrap {
+    position: absolute;
+    background: rgba($color: #fff, $alpha: 0.6);
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.25s linear;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    &__img {
+        width: 350px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    &__title {
+        color: var(--color-grey-11);
+        margin-top: 12px;
+    }
+
+    &__desc {
+        color: var(--color-grey-11);
+        margin-top: 5px;
+        width: 350px;
+        font-weight: 600;
+    }
+}

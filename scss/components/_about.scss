@@ -1,0 +1,40 @@
+.about {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+
+    background-image: url("../../assets/img/Overlay.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about-content {
+    padding-top: 116px;
+    padding-bottom: 68px;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        gap: 34px;
+    }
+
+    &__img {
+        width: 314px;
+        height: 175px;
+        object-fit: cover;
+    }
+
+    &__desc {
+        margin-top: 16px;
+    }
+
+    &__btn {
+        position: relative;
+        left: 50%;
+        translate: -50%;
+        margin-top: 34px;
+    }
+}

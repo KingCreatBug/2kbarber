@@ -1,0 +1,11 @@
+{
+    "name": "architec",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "dev": "vite",
+        "sass": "sass scss:assets/css -w"
+    },
+    "author": "",
+    "license": "ISC"
+}

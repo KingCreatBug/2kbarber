@@ -1,0 +1,34 @@
+.section-heading {
+    color: var(--color-white-solid);
+
+    font-family: "Subjectivity";
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.4;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.section-heading-lv2 {
+    font-family: "Subjectivity";
+    color: var(--color-yellow-48);
+    font-size: 2.9rem;
+    font-weight: 600;
+    line-height: 1.55;
+}
+
+.section-desc {
+    color: var(--color-white-90);
+    font-size: 1.7rem;
+    line-height: 1.6;
+    letter-spacing: 0.4px;
+}
+
+.section-desc-lv2 {
+    color: var(--color-white-90);
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}

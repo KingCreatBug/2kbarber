@@ -1,0 +1,21 @@
+@keyframes flickerYellow {
+    0%,
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fcba11,
+            0 0 30px #fcba11, 0 0 40px #fcba11, 0 0 50px #fcba11,
+            0 0 60px #fcba11;
+    }
+    50% {
+        opacity: 0.8;
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #fcba11,
+            0 0 30px #fcba11, 0 0 40px #fcba11, 0 0 50px #fcba11,
+            0 0 60px #fcba11;
+    }
+}
+
+@keyframes BeProud {
+    100% {
+        background-position: 100vw 0px;
+    }
+}
