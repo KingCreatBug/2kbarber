@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="./assets/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="./assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="./assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="./assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="./assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="./assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="./assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="./assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="./assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="./assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <!-- Embed fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <title>Daddy Tattoo</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header" id="header"></header>
+
+        <!-- Main -->
+        <main>
+            <!-- Slides -->
+            <div class="shop-slides">
+                <h2 class="shop-slides__title section-heading">
+                    The zone for men
+                </h2>
+                <div class="shop-slides__track">
+                    <img
+                        src="./assets/img/shop/slide1.jpg"
+                        alt=""
+                        class="shop-slides__item"
+                    />
+                </div>
+
+                <div class="shop-slides__track">
+                    <img
+                        src="./assets/img/shop/slide2.jpg"
+                        alt=""
+                        class="shop-slides__item"
+                    />
+                </div>
+
+                <div class="shop-slides__track">
+                    <img
+                        src="./assets/img/shop/slide3.jpg"
+                        alt=""
+                        class="shop-slides__item"
+                    />
+                </div>
+            </div>
+
+            <div class="shop-container">
+                <div class="container">
+                    <div class="shop-filter">
+                        <button id="btnDrop" class="shop-filter__wrap">
+                            <p class="shop-filter__text">Filter</p>
+                            <img src="./assets/icon/filter.svg" alt="" />
+                        </button>
+                        <div class="shop-filter__drop" id="shopDrop">
+                            <img
+                                src="./assets/icon/polygon.svg"
+                                alt=""
+                                class="shop-filter__icon"
+                            />
+                            <select id="product-type-filter">
+                                <option class="shop-filter__value" value="">
+                                    All Product
+                                </option>
+                                <option value="keo">Wax</option>
+                                <option value="nuoc">Hair Spray</option>
+                                <option value="bot">Hair Powder</option>
+                            </select>
+
+                            <div class="shop-filter__box">
+                                <div class="shop-filter__group">
+                                    <label
+                                        class="shop-filter__label"
+                                        for="min-price"
+                                        >Min Price</label
+                                    >
+                                    <input
+                                        class="shop-filter__input"
+                                        type="number"
+                                        id="min-price"
+                                        placeholder="0"
+                                    />
+                                </div>
+                                <div class="shop-filter__group">
+                                    <label
+                                        class="shop-filter__label"
+                                        for="min-price"
+                                        >Max Price</label
+                                    >
+                                    <input
+                                        class="shop-filter__input"
+                                        type="number"
+                                        id="max-price"
+                                        placeholder="50"
+                                    />
+                                </div>
+                            </div>
+
+                            <button class="shop-filter__btn" id="filter-button">
+                                Filter
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="shop-menu" class="shop-menu"></div>
+                    <div id="pagination" class="shop-pagination"></div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer" id="footer"></footer>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>

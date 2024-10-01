@@ -3,10 +3,85 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="./assets/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="./assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="./assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="./assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="./assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="./assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="./assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="./assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="./assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="./assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
         <!-- Embed fonts -->
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
-
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
         <title>Daddy Tattoo</title>
@@ -23,16 +98,19 @@
                 <div class="container">
                     <section class="about-content">
                         <div class="about-content__top">
-                            <img
-                                src="./assets/img/about/about-img.png"
-                                alt=""
-                                class="about-content__img"
-                            />
+                            <div class="about-content__wrap">
+                                <img
+                                    src="./assets/img/about/about-bg.png"
+                                    alt=""
+                                    class="about-content__img"
+                                />
+                                <p class="about-content__text">2022</p>
+                            </div>
                             <div>
                                 <h2
                                     class="about-content__title section-heading"
                                 >
-                                    2K Barbershop, your classic barbershop with
+                                    2K Barbermenu, your classic barbershop with
                                     a touch of elegance and class.
                                 </h2>
                                 <p class="about-content__desc section-desc">
@@ -116,66 +194,68 @@
                 </div>
             </div>
 
-            <!-- Shop -->
-            <div class="shop">
-                <div class="shop-container">
+            <!-- Menu -->
+            <div class="menu">
+                <div class="menu-container">
                     <img
-                        src="./assets/img/shop/menu.png"
+                        src="./assets/img/menu/menu.png"
                         alt=""
-                        class="shop-container__menu"
+                        class="menu-container__menu"
                     />
 
-                    <div class="shop-container__wrap">
+                    <a href="#!" class="menu__btn btn-border">Contact!!</a>
+
+                    <div class="menu-container__wrap">
                         <button
                             data-target="regularCut"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="colorHair"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="adultHaircut"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="beardVitamins"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="hairCare"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="beardTrim"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="pomade"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="faceMassage"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                         <button
                             data-target="hairWashing"
-                            class="shop-container__btn"
+                            class="menu-container__btn"
                         ></button>
                     </div>
 
-                    <div class="shop-wraps">
+                    <div class="menu-wraps">
                         <!-- Regular cut -->
-                        <article id="regularCut" class="shop-wrap">
+                        <article id="regularCut" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/regularCut.jpg"
+                                src="./assets/img/menu/regularCut.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Regular cut
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 A regular cut is a classic men's haircut with
                                 short sides and back, and slightly longer hair
                                 on top. It's clean, balanced, and easy to
@@ -184,16 +264,16 @@
                         </article>
 
                         <!-- Hair color -->
-                        <article id="colorHair" class="shop-wrap">
+                        <article id="colorHair" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/hairColor.jpg"
+                                src="./assets/img/menu/hairColor.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Hair color
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 Hair dye is a chemical product used to change
                                 hair color, offering shades from natural tones
                                 to bold, vibrant hues, either permanently or
@@ -202,16 +282,16 @@
                         </article>
 
                         <!-- Adult haircut -->
-                        <article id="adultHaircut" class="shop-wrap">
+                        <article id="adultHaircut" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/adultHaircut.jpg"
+                                src="./assets/img/menu/adultHaircut.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Adult haircut
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 Hair dye is a chemical product used to change
                                 hair color, offering shades from natural tones
                                 to bold, vibrant hues, either permanently or
@@ -220,16 +300,16 @@
                         </article>
 
                         <!-- Beard vitamins -->
-                        <article id="beardVitamins" class="shop-wrap">
+                        <article id="beardVitamins" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/beardVitamins.jpg"
+                                src="./assets/img/menu/beardVitamins.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Beard vitamins
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 Hair dye is a chemical product used to change
                                 hair color, offering shades from natural tones
                                 to bold, vibrant hues, either permanently or
@@ -238,16 +318,16 @@
                         </article>
 
                         <!-- Hair care -->
-                        <article id="hairCare" class="shop-wrap">
+                        <article id="hairCare" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/hairCare.jpg"
+                                src="./assets/img/menu/hairCare.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Hair care
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 Hair care involves practices to maintain hair
                                 health, including cleansing, conditioning,
                                 moisturizing, and protecting hair from damage to
@@ -256,16 +336,16 @@
                         </article>
 
                         <!-- Beard trim -->
-                        <article id="beardTrim" class="shop-wrap">
+                        <article id="beardTrim" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/beardTrim.jpg"
+                                src="./assets/img/menu/beardTrim.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Beard trim
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 A beard trim shapes and refines facial hair,
                                 maintaining a neat, even length while enhancing
                                 your natural look by defining edges and removing
@@ -274,16 +354,16 @@
                         </article>
 
                         <!-- Pomade -->
-                        <article id="pomade" class="shop-wrap">
+                        <article id="pomade" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/pomade.jpg"
+                                src="./assets/img/menu/pomade.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Pomade
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 Pomade is a styling product that provides a
                                 strong hold and shiny finish, ideal for slick
                                 hairstyles and control, allowing for versatile
@@ -292,16 +372,16 @@
                         </article>
 
                         <!-- Face massage -->
-                        <article id="faceMassage" class="shop-wrap">
+                        <article id="faceMassage" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/faceMessage.jpg"
+                                src="./assets/img/menu/faceMessage.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Face massage
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 A face massage promotes relaxation and
                                 rejuvenation by improving circulation, reducing
                                 tension, and enhancing skin tone, resulting in a
@@ -310,16 +390,16 @@
                         </article>
 
                         <!-- Hair washing -->
-                        <article id="hairWashing" class="shop-wrap">
+                        <article id="hairWashing" class="menu-wrap">
                             <img
-                                src="./assets/img/shop/hairWashing.jpg"
+                                src="./assets/img/menu/hairWashing.jpg"
                                 alt=""
-                                class="shop-wrap__img"
+                                class="menu-wrap__img"
                             />
-                            <h3 class="shop-wrap__title section-heading">
+                            <h3 class="menu-wrap__title section-heading">
                                 Hair washing
                             </h3>
-                            <p class="shop-wrap__desc section-desc">
+                            <p class="menu-wrap__desc section-desc">
                                 Hair washing involves cleansing the scalp and
                                 strands with shampoo to remove dirt, oil, and
                                 product buildup, promoting a healthy, clean, and
@@ -327,6 +407,105 @@
                             </p>
                         </article>
                     </div>
+                </div>
+            </div>
+
+            <!-- Shop -->
+            <div class="shop">
+                <div class="container">
+                    <h2 class="shop__title section-heading">Zone for men</h2>
+                    <div class="shop__list">
+                        <!-- Shop Item 1 -->
+                        <article class="shop-item">
+                            <h3 class="shop-item__name section-heading">
+                                Red One
+                            </h3>
+                            <div class="shop-item__thumb">
+                                <img
+                                    src="./assets/img/shop/prod1.png"
+                                    alt=""
+                                    class="shop-item__img"
+                                />
+                            </div>
+                            <p class="shop-item__desc section-desc">
+                                Red One hair wax holds hair well, is not sticky,
+                                fragrant, and natural.
+                            </p>
+                        </article>
+
+                        <!-- Shop Item 2 -->
+                        <article class="shop-item">
+                            <h3 class="shop-item__name section-heading">
+                                Natulique
+                            </h3>
+                            <div class="shop-item__thumb">
+                                <img
+                                    src="./assets/img/shop/prod5.png"
+                                    alt=""
+                                    class="shop-item__img"
+                                />
+                            </div>
+                            <p class="shop-item__desc section-desc">
+                                Natulique has strong hold, is not sticky, and is
+                                natural.
+                            </p>
+                        </article>
+
+                        <!-- Shop Item 3 -->
+                        <article class="shop-item">
+                            <h3 class="shop-item__name section-heading">
+                                Red one
+                            </h3>
+                            <div class="shop-item__thumb">
+                                <img
+                                    src="./assets/img/shop/prod3.png"
+                                    alt=""
+                                    class="shop-item__img"
+                                />
+                            </div>
+                            <p class="shop-item__desc section-desc">
+                                Red one wax has strong hold, is not sticky, and
+                                is natural.
+                            </p>
+                        </article>
+
+                        <!-- Shop Item 4 -->
+                        <article class="shop-item">
+                            <h3 class="shop-item__name section-heading">
+                                Red one
+                            </h3>
+                            <div class="shop-item__thumb">
+                                <img
+                                    src="./assets/img/shop/prod4.webp"
+                                    alt=""
+                                    class="shop-item__img"
+                                />
+                            </div>
+                            <p class="shop-item__desc section-desc">
+                                Red one wax has strong hold, is not sticky, and
+                                is natural.
+                            </p>
+                        </article>
+                    </div>
+                    <button onclick="moTrang()" class="shop__btn btn">
+                        <svg
+                            class="btn-icon"
+                            width="180px"
+                            height="60px"
+                            viewBox="0 0 180 60"
+                            class="border"
+                        >
+                            <polyline
+                                points="179,1 179,59 1,59 1,1 179,1"
+                                class="bg-line"
+                            />
+                            <polyline
+                                points="179,1 179,59 1,59 1,1 179,1"
+                                class="hl-line"
+                            />
+                        </svg>
+                        <span class="btn-span">Go Shopping</span>
+                    </button>
                 </div>
             </div>
         </main>

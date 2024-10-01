@@ -21,6 +21,22 @@
         gap: 34px;
     }
 
+    &__wrap {
+        position: relative;
+    }
+
+    &__text {
+        position: absolute;
+        top: 46%;
+        left: 32%;
+        translate: -50% -50%;
+
+        color: var(--color-white-90);
+        font-family: "Subjectivity";
+        font-size: 4.2rem;
+        opacity: 0.6;
+    }
+
     &__img {
         width: 314px;
         height: 175px;
