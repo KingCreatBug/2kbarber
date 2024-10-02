@@ -1,0 +1,44 @@
+@use "../abstracts";
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__img {
+        display: block;
+        object-fit: cover;
+    }
+}
+
+.error-content {
+    width: 48%;
+    flex-shrink: 0;
+
+    &__title {
+        color: var(--color-black-solid);
+        font-family: "Subjectivity";
+        font-size: 6.2rem;
+        font-weight: 700;
+        line-height: 1;
+    }
+
+    &__desc {
+        margin-top: 18px;
+        font-size: 1.8rem;
+        line-height: 1.67;
+    }
+
+    &__btn {
+        display: inline-block;
+        margin-top: 38px;
+        padding: 15px 35px;
+        background: var(--color-black-solid);
+        color: var(--color-white-solid);
+        border-radius: 99px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

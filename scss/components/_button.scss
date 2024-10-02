@@ -10,7 +10,7 @@
 
     &:hover {
         transition: 1s ease-in-out;
-        background: #fff;
+        background: var(--color-white-solid);
     }
 }
 
@@ -45,7 +45,7 @@
     display: inline-block;
     padding: 13px 26px;
     border-radius: 99px;
-    background: #fff;
+    background: var(--color-white-solid);
 
     color: var(--color-grey-11);
     font-size: 1.2rem;

@@ -6,55 +6,103 @@
 }
 
 .footer {
-    background: var(--color-black-solid);
+    padding: 60px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 
-    &__inner {
-        padding: 68px 34px;
+    &__top {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: space-between;
+        gap: 50px;
     }
 
-    &__list {
+    &__bot {
         @extend %flexItemCenter;
-        justify-content: center;
-        gap: 5px;
+        justify-content: space-between;
+        margin-top: 86px;
     }
 
-    &__item {
-        padding: 9px 12px;
+    &__socials {
+        @extend %flexItemCenter;
+        gap: 22px;
     }
 
-    &__link {
-        color: var(--color-white-solid);
+    &__social {
+        width: 23px;
+        height: 23px;
 
         &:hover {
             opacity: 0.8;
         }
     }
 
-    &__bot {
-        @extend %flexItemCenter;
-        justify-content: space-around;
-        margin-top: 20px;
-    }
-
-    &__icon {
-        width: 16px;
-        height: 16px;
-    }
-
-    &__location,
-    &__phone {
-        @extend %flexItemCenter;
-        gap: 5px;
-    }
-
     &__copyright {
         text-align: center;
-        margin-top: 86px;
-        color: rgba(255, 255, 255, 0.3);
 
+        color: var(--color-white-solid);
         font-size: 1.43rem;
-        font-weight: 700;
+        font-weight: 500;
         line-height: 1.67;
         letter-spacing: 0.4px;
+    }
+}
+
+.footer-container {
+    &__logo {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: var(--color-white-solid);
+        font-family: "Subjectivity";
+    }
+
+    &__location {
+        margin-top: 22px;
+    }
+}
+
+.footer-menu {
+    &__title {
+        color: var(--color-white-solid);
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &__list {
+        margin-top: 22px;
+        color: var(--color-white-solid);
+        text-transform: capitalize;
+    }
+
+    &__item {
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__item + &__item {
+        margin-top: 12px;
+    }
+
+    &__time {
+        color: var(--color-white-solid);
+        margin-top: 22px;
+    }
+
+    &__time + &__time {
+        margin-top: 12px;
+    }
+
+    &__btn {
+        margin-top: 28px;
+        padding: 8px 16px;
+        background: var(--color-white-solid);
+        border-radius: 5px;
+
+        font-size: 1.8rem;
+        font-weight: 500;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }

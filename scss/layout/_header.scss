@@ -9,58 +9,164 @@
     width: 100%;
     position: relative;
     z-index: 2;
-    padding: 20px;
-    background: var(--color-black-solid);
+    padding: 20px 135px;
+    background: transparent;
 
-    &__logo {
-        margin: 0 50px;
+    &__inner {
+        @extend %flexItemCenter;
+        justify-content: space-between;
     }
 
-    &__name {
+    &__logo {
         font-size: 2.2rem;
         font-weight: 600;
         color: var(--color-yellow-48);
         font-family: "Subjectivity";
     }
 
-    &__img {
-        height: 57px;
+    &__background {
+        display: block;
+        width: 100%;
+        height: 120vh;
         object-fit: cover;
-        border-radius: 5px;
     }
 
-    &__background {
-        width: 100%;
-        height: 100vh;
-        object-fit: cover;
+    &__action {
+        padding: 12px 22px;
+        background: var(--color-white-solid);
+        border-radius: 8px;
+
+        color: var(--color-black-solid);
+        font-size: 1.8rem;
+        font-weight: 500;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    &__container {
+        position: relative;
+        margin-top: -90px;
     }
 }
 
 .navbar {
-    @extend %flexItemCenter;
-    justify-content: center;
+    border: 2px solid var(--color-white-solid);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(7px);
+    opacity: 0.8;
 
     &__list {
         @extend %flexItemCenter;
-        gap: 4px;
     }
 
     &__item {
-        padding: 10px 13px;
+        padding: 5px;
     }
 
     &__link {
-        color: var(--color-white-90);
-        font-size: 1.3rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        transition: 0.25s linear;
-        font-family: "Subjectivity";
+        display: block;
+        padding: 12px 24px;
+        border-radius: 5px;
 
-        &:hover,
-        &:active {
-            color: var(--color-yellow-48);
+        color: #cecdcd;
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-transform: uppercase;
+
+        transition: 0.25s linear;
+
+        &--active,
+        &:hover {
+            background: var(--color-white-solid);
+            color: var(--color-black-solid);
         }
+    }
+}
+
+.header-box {
+    position: absolute;
+    top: 50%;
+    left: 135px;
+    translate: 0 -50%;
+
+    padding: 28px 14px;
+    border: 2px solid var(--color-white-solid);
+    border-radius: 22px;
+
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(7px);
+    opacity: 0.8;
+
+    &__form {
+        margin-top: 28px;
+    }
+
+    &__input {
+        display: block;
+        width: 388px;
+        padding: 12px 8px;
+        border: 2px solid var(--color-white-solid);
+        border-radius: 5px;
+        color: var(--color-white-solid);
+        font-size: 1.6rem;
+
+        &::placeholder {
+            color: var(--color-white-solid);
+        }
+
+        &:focus-within,
+        &:focus-within::placeholder {
+            color: var(--color-black-solid);
+            background: #e8e8e8;
+        }
+
+        &--small {
+            width: 194px;
+        }
+    }
+
+    &__input + &__input {
+        margin-top: 16px;
+    }
+
+    &__wrap {
+        @extend %flexItemCenter;
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    &__btn {
+        background: var(--color-yellow-48);
+        width: 100%;
+        font-size: 1.6rem;
+        font-weight: 500;
+        padding: 12px 0;
+        border-radius: 5px;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.header-content {
+    position: absolute;
+    right: 135px;
+    bottom: 50px;
+    display: flex;
+    width: 70%;
+
+    &__title {
+        text-align: end;
+        font-size: 8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-family: "Subjectivity";
+        background: -webkit-linear-gradient(var(--color-white-solid), #333);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 }

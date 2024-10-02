@@ -5,167 +5,134 @@
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 2,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "3.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 3,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 4,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 5,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 6,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 7,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod4.webp",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 8,
-        "title": "Spider Hair Wax",
-        "name": "Red One",
+        "name": "A",
         "img": "assets/img/shop/prod3.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 9,
-        "title": "Spider Hair Wax",
-        "name": "Red One",
+        "name": "B",
         "img": "assets/img/shop/prod5.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 10,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 11,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 12,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 13,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 14,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 15,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 16,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     },
     {
         "id": 17,
-        "title": "Spider Hair Wax",
         "name": "Red One",
         "img": "assets/img/shop/prod1.png",
         "price": "50.00",
-        "star": "4.2",
         "category": "keo",
         "link": "prod-detail.html"
     }

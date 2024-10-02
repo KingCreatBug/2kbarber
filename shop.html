@@ -124,63 +124,136 @@
 
             <div class="shop-container">
                 <div class="container">
-                    <div class="shop-filter">
-                        <button id="btnDrop" class="shop-filter__wrap">
-                            <p class="shop-filter__text">Filter</p>
-                            <img src="./assets/icon/filter.svg" alt="" />
-                        </button>
-                        <div class="shop-filter__drop" id="shopDrop">
-                            <img
-                                src="./assets/icon/polygon.svg"
-                                alt=""
-                                class="shop-filter__icon"
-                            />
-                            <select id="product-type-filter">
-                                <option class="shop-filter__value" value="">
-                                    All Product
+                    <div class="shop-top">
+                        <h2 class="shop-content__title section-heading">
+                            Pomade
+                        </h2>
+                        <div class="shop-top__filter">
+                            <label class="shop-top__label" for="sort">
+                                Arrange:
+                            </label>
+                            <select id="sort" class="shop-top__select">
+                                <option
+                                    class="shop-top__option"
+                                    value="default"
+                                >
+                                    Default
                                 </option>
-                                <option value="keo">Wax</option>
-                                <option value="nuoc">Hair Spray</option>
-                                <option value="bot">Hair Powder</option>
+                                <option
+                                    class="shop-top__option"
+                                    value="price-asc"
+                                >
+                                    Price increases gradually
+                                </option>
+                                <option
+                                    class="shop-top__option"
+                                    value="price-desc"
+                                >
+                                    Price decreasing
+                                </option>
+                                <option
+                                    class="shop-top__option"
+                                    value="name-asc"
+                                >
+                                    A to Z
+                                </option>
+                                <option
+                                    class="shop-top__option"
+                                    value="name-desc"
+                                >
+                                    Z to A
+                                </option>
                             </select>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-3">
+                            <!-- Shop content -->
+                            <p class="shop-content__desc section-desc">
+                                Welcome to the underground world of Gentlemen,
+                                where all the secrets to elegance are
+                                revealed...
+                            </p>
 
-                            <div class="shop-filter__box">
-                                <div class="shop-filter__group">
-                                    <label
-                                        class="shop-filter__label"
-                                        for="min-price"
-                                        >Min Price</label
+                            <!-- Filter -->
+                            <div class="shop-filter">
+                                <p class="shop-filter__text">All Category</p>
+                                <div class="shop-filter__wrap-btn">
+                                    <button
+                                        class="shop-filter__btn-cate"
+                                        value="keo"
                                     >
-                                    <input
-                                        class="shop-filter__input"
-                                        type="number"
-                                        id="min-price"
-                                        placeholder="0"
-                                    />
-                                </div>
-                                <div class="shop-filter__group">
-                                    <label
-                                        class="shop-filter__label"
-                                        for="min-price"
-                                        >Max Price</label
+                                        Wax
+                                    </button>
+                                    <button
+                                        class="shop-filter__btn-cate"
+                                        value="nuoc"
                                     >
-                                    <input
-                                        class="shop-filter__input"
-                                        type="number"
-                                        id="max-price"
-                                        placeholder="50"
-                                    />
+                                        Hair Spray
+                                    </button>
+                                    <button
+                                        class="shop-filter__btn-cate"
+                                        value="bot"
+                                    >
+                                        Hair Powder
+                                    </button>
                                 </div>
                             </div>
 
-                            <button class="shop-filter__btn" id="filter-button">
-                                Filter
-                            </button>
+                            <div class="shop-filter">
+                                <div class="shop-filter__drop">
+                                    <div class="shop-filter__boxer">
+                                        <p class="shop-filter__text">Filter</p>
+                                        <img
+                                            src="./assets/icon/filter.svg"
+                                            alt=""
+                                        />
+                                    </div>
+
+                                    <div class="shop-filter__box">
+                                        <div class="shop-filter__group">
+                                            <label
+                                                class="shop-filter__label"
+                                                for="min-price"
+                                                >Min Price</label
+                                            >
+                                            <input
+                                                class="shop-filter__input"
+                                                type="number"
+                                                id="min-price"
+                                                placeholder="0"
+                                            />
+                                        </div>
+                                        <div class="shop-filter__group">
+                                            <label
+                                                class="shop-filter__label"
+                                                for="min-price"
+                                                >Max Price</label
+                                            >
+                                            <input
+                                                class="shop-filter__input"
+                                                type="number"
+                                                id="max-price"
+                                                placeholder="50"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <button
+                                        class="shop-filter__btn"
+                                        id="filter-button"
+                                    >
+                                        Filter
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-9">
+                            <div id="shop-menu" class="shop-menu"></div>
+                            <div id="pagination" class="shop-pagination"></div>
                         </div>
                     </div>
-
-                    <div id="shop-menu" class="shop-menu"></div>
-                    <div id="pagination" class="shop-pagination"></div>
                 </div>
             </div>
         </main>

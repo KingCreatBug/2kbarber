@@ -1,0 +1,85 @@
+@use "../abstracts";
+
+.team {
+    padding: 60px 0;
+}
+
+.team-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    &__title {
+        font-size: 4rem;
+    }
+
+    &__desc {
+        width: 70%;
+        text-align: center;
+    }
+}
+
+.team-containers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 70px;
+}
+
+.team-container {
+    width: 100%;
+    position: relative;
+    padding: 22px;
+    background: var(--color-white-solid);
+    border-radius: 20px;
+    overflow: hidden;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__box {
+        background: #fff;
+        padding: 8px 16px;
+        border-radius: 10px;
+    }
+
+    &__name {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &__position {
+        margin-top: 5px;
+        color: #5a5a59;
+    }
+
+    &__socials {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    &__social {
+        width: 23px;
+        height: 23px;
+
+        &:hover {
+            scale: 1.1;
+        }
+    }
+
+    &__social + &__social {
+        margin-top: 5px;
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: -30px;
+    }
+}

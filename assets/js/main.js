@@ -48,92 +48,86 @@ document.querySelectorAll(".menu-container__btn").forEach((button) => {
 });
 
 // Scroll
-let hasAnimated = false;
+// let hasAnimated = false;
 
-window.addEventListener("scroll", function () {
-    scrollHeader();
-});
+// window.addEventListener("scroll", function () {
+//     scrollHeader();
+// });
 
-function scrollHeader() {
-    const logo = document.getElementById("logo");
-    const header = document.getElementById("header");
-    const newspaperSpinning = [
-        { transform: "translateY(-50px)" },
-        { transform: "translateY(0px)" },
-    ];
+// function scrollHeader() {
+//     const logo = document.getElementById("logo");
+//     const header = document.getElementById("header");
+//     const newspaperSpinning = [
+//         { transform: "translateY(-50px)" },
+//         { transform: "translateY(0px)" },
+//     ];
 
-    const newspaperTiming = {
-        duration: 900,
-        iterations: 1,
-    };
+//     const newspaperTiming = {
+//         duration: 900,
+//         iterations: 1,
+//     };
 
-    if (document.documentElement.scrollTop > 800 && !hasAnimated) {
-        logo.style.display = "none";
-        header.style.position = "fixed";
-        header.style.padding = "5px";
-        header.animate(newspaperSpinning, newspaperTiming);
-        hasAnimated = true;
-    } else if (document.documentElement.scrollTop <= 800 && hasAnimated) {
-        logo.style.display = "flex";
-        header.style.position = "relative";
-        hasAnimated = false;
-    }
-}
+//     if (document.documentElement.scrollTop > 800 && !hasAnimated) {
+//         logo.style.display = "none";
+//         header.style.position = "fixed";
+//         header.style.padding = "5px";
+//         header.animate(newspaperSpinning, newspaperTiming);
+//         hasAnimated = true;
+//     } else if (document.documentElement.scrollTop <= 800 && hasAnimated) {
+//         logo.style.display = "flex";
+//         header.style.position = "relative";
+//         hasAnimated = false;
+//     }
+// }
 
 // Mo Trang
 function moTrang() {
     window.location.href = "shop.html";
 }
 
-// Button dropdown
-function openDrop() {
-    const drop = document.getElementById("shopDrop");
-    drop.style.opacity = "1";
-    drop.style.visibility = "visible";
-}
-
-function closeDrop() {
-    const drop = document.getElementById("shopDrop");
-    drop.style.opacity = "0";
-    drop.style.visibility = "hidden";
-}
-
-// Gán sự kiện cho nút Filter
-document.getElementById("btnDrop").addEventListener("click", function () {
-    const drop = document.getElementById("shopDrop");
-    if (drop.style.visibility === "visible") {
-        closeDrop();
-    } else {
-        openDrop();
-    }
-});
-
-document.getElementById("filter-button").addEventListener("click", function () {
-    closeDrop();
-});
-
 // Pagination Shop
 const dataShop = "assets/js/dataShop.json";
 
 const menu = document.getElementById("shop-menu");
 const paginationContainer = document.getElementById("pagination");
-const productTypeFilter = document.getElementById("product-type-filter");
 const minPriceInput = document.getElementById("min-price");
 const maxPriceInput = document.getElementById("max-price");
 const filterButton = document.getElementById("filter-button");
+const sortSelect = document.getElementById("sort"); // Thêm phần tử sắp xếp
+
+// Nút lọc theo loại sản phẩm
+const categoryButtons = document.querySelectorAll(".shop-filter__btn-cate");
 
 menu.innerHTML = "";
 
 let page = 0; // Trang hiện tại
-let perPage = 6; // Số mục trên mỗi trang
-let totalItems = 0; // Tổng số mục từ dữ liệu
-let filteredData = [];
+let perPage = 12; // Số mục trên mỗi trang
+let totalItems = 0; // Tổng số mục sau khi lọc
+let filteredData = []; // Dữ liệu đã lọc để hiển thị
+let selectedCategory = ""; // Mặc định không có bộ lọc loại sản phẩm
 
-filterButton.addEventListener("click", () => {
-    page = 0; // Reset về trang đầu
-    getData(); // Tải lại dữ liệu với bộ lọc
+// Gắn sự kiện cho các nút lọc theo loại sản phẩm
+categoryButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        selectedCategory = e.target.value; // Cập nhật loại sản phẩm được chọn dựa trên nút được nhấn
+        page = 0; // Quay lại trang đầu
+        getData(); // Tải lại và lọc dữ liệu
+    });
 });
 
+// Gắn sự kiện cho nút lọc
+filterButton.addEventListener("click", () => {
+    page = 0; // Quay lại trang đầu
+    getData(); // Tải lại và lọc dữ liệu
+});
+
+// Gắn sự kiện cho việc thay đổi cách sắp xếp
+sortSelect.addEventListener("change", () => {
+    page = 0; // Quay lại trang đầu
+    sortData(); // Sắp xếp và cập nhật dữ liệu
+});
+
+// Hàm lấy dữ liệu và lọc
 function getData() {
     fetch(dataShop)
         .then((response) => {
@@ -143,21 +137,32 @@ function getData() {
             return response.json();
         })
         .then((data) => {
-            // Lọc dữ liệu dựa trên bộ lọc đã chọn
-            const filterValue = productTypeFilter.value;
+            // Lấy giá trị lọc giá
             const minPrice = parseFloat(minPriceInput.value) || 0;
             const maxPrice = parseFloat(maxPriceInput.value) || Infinity;
 
-            filteredData = data.filter(
-                (item) =>
-                    (filterValue ? item.category === filterValue : true) &&
-                    parseFloat(item.price.replace(/[$,]/g, "")) >= minPrice &&
-                    parseFloat(item.price.replace(/[$,]/g, "")) <= maxPrice
-            );
+            // Lọc dữ liệu dựa trên loại sản phẩm được chọn và khoảng giá
+            filteredData = data.filter((item) => {
+                const itemPrice = parseFloat(item.price.replace(/[$,]/g, ""));
+                return (
+                    (!selectedCategory || item.category === selectedCategory) && // Kiểm tra nếu loại sản phẩm khớp
+                    itemPrice >= minPrice &&
+                    itemPrice <= maxPrice // Kiểm tra khoảng giá
+                );
+            });
 
-            totalItems = filteredData.length; // Cập nhật tổng số mục
-            updateMenu(filteredData); // Cập nhật menu với dữ liệu đã lọc
-            setupPagination(); // Thiết lập phân trang
+            totalItems = filteredData.length; // Cập nhật tổng số mục sau khi lọc
+
+            if (totalItems === 0) {
+                // Nếu không có sản phẩm phù hợp
+                menu.innerHTML =
+                    '<div class="error"><section class="error-content"><h2 class="error-content__title">No products match</h2><p class="error-content__desc">Sorry, the product you are looking for does not exist. If you think something is broken, it is not :)</p><a href="/" class="error-content__btn">Go To Home</a></section><img src="assets/img/error.png" class="error__img" /></div>';
+                paginationContainer.innerHTML = ""; // Xóa phân trang nếu không có sản phẩm
+            } else {
+                // Nếu có sản phẩm phù hợp
+                sortData(); // Gọi hàm sắp xếp trước khi hiển thị
+                setupPagination(); // Thiết lập phân trang
+            }
         })
         .catch((error) => {
             console.error("Đã xảy ra sự cố với thao tác fetch:", error);
@@ -165,9 +170,34 @@ function getData() {
                 '<p class="error">Không thể tải dữ liệu. Vui lòng thử lại sau.</p>';
         });
 }
-getData();
 
-// Cập nhật menu với dữ liệu của trang hiện tại
+// Hàm sắp xếp dữ liệu dựa trên lựa chọn
+function sortData() {
+    const sortValue = sortSelect.value;
+
+    if (sortValue === "price-asc") {
+        filteredData.sort(
+            (a, b) =>
+                parseFloat(a.price.replace(/[$,]/g, "")) -
+                parseFloat(b.price.replace(/[$,]/g, ""))
+        );
+    } else if (sortValue === "price-desc") {
+        filteredData.sort(
+            (a, b) =>
+                parseFloat(b.price.replace(/[$,]/g, "")) -
+                parseFloat(a.price.replace(/[$,]/g, ""))
+        );
+    } else if (sortValue === "name-asc") {
+        filteredData.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortValue === "name-desc") {
+        filteredData.sort((a, b) => b.name.localeCompare(a.name));
+    }
+
+    updateMenu(filteredData); // Cập nhật menu sau khi sắp xếp
+    setupPagination(); // Cập nhật phân trang
+}
+
+// Cập nhật menu hiển thị với dữ liệu trang hiện tại
 function updateMenu(data) {
     const start = page * perPage;
     const end = start + perPage;
@@ -176,42 +206,39 @@ function updateMenu(data) {
     const itemsHTML = paginatedItems
         .map(
             (item) => `
-            <article class="shop-menu__item">
-               <a href="${item.link}">
-                    <div class="shop-menu__wrap-img">
-                        <img src="${item.img}" alt="" class="shop-menu__img">
-                    </div>
-                    <h3 class="shop-menu__title">${item.title}</h3>
-                    <p class="shop-menu__name">${item.name}</p>
-                    <div class="shop-menu__wrap">
-                        <p class="shop-menu__price">$${item.price}</p>
-                        <div class="shop-menu__box">
-                            <img src="./assets/icon/star.svg" alt="">
-                            <p class="shop-menu__num">${item.star}</p>
+                <article class="shop-menu__item">
+                    <a href="${item.link}">
+                        <div class="shop-menu__wrap-img">
+                            <img src="${item.img}" alt="${item.name}" class="shop-menu__thumb" />
                         </div>
-                    </div>
-               </a>
-            </article>`
+                        <div class="shop-menu__wrap">
+                            <h3 class="shop-menu__title section-heading">${item.name}</h3>
+                            <p class="shop-menu__price">$${item.price}</p>
+                        </div>
+                    </a>
+                </article>
+            `
         )
         .join("");
 
-    menu.innerHTML = itemsHTML; // Cập nhật menu
+    menu.innerHTML = itemsHTML; // Cập nhật menu với các mục đã lọc
 }
 
-// Thiết lập phân trang
+// Thiết lập nút phân trang
 function setupPagination() {
     const pageCount = Math.ceil(totalItems / perPage); // Tính số trang
     paginationContainer.innerHTML = ""; // Xóa phân trang cũ
 
-    // Nút Prev
+    // Nút Prev (Trước)
     const prevButton = document.createElement("button");
-    prevButton.innerText = "Prev";
+    prevButton.innerText = "Trước";
     prevButton.classList.add("shop-pagination__button");
     prevButton.disabled = page === 0; // Vô hiệu hóa nếu đang ở trang đầu
     prevButton.addEventListener("click", () => {
         if (page > 0) {
             page--; // Giảm trang
-            getData(); // Tải lại dữ liệu cho trang mới
+            updateMenu(filteredData); // Cập nhật menu
+            setupPagination(); // Cập nhật phân trang
         }
     });
     paginationContainer.appendChild(prevButton); // Thêm nút Prev
@@ -226,21 +253,72 @@ function setupPagination() {
         }
         button.addEventListener("click", () => {
             page = i; // Cập nhật trang hiện tại
-            getData(); // Tải lại dữ liệu cho trang mới
+            updateMenu(filteredData); // Cập nhật menu
+            setupPagination(); // Cập nhật phân trang
         });
         paginationContainer.appendChild(button); // Thêm nút vào phân trang
     }
 
-    // Nút Next
+    // Nút Next (Sau)
     const nextButton = document.createElement("button");
-    nextButton.innerText = "Next";
+    nextButton.innerText = "Sau";
     nextButton.classList.add("shop-pagination__button");
     nextButton.disabled = page === pageCount - 1; // Vô hiệu hóa nếu đang ở trang cuối
     nextButton.addEventListener("click", () => {
         if (page < pageCount - 1) {
             page++; // Tăng trang
-            getData(); // Tải lại dữ liệu cho trang mới
+            updateMenu(filteredData); // Cập nhật menu
+            setupPagination(); // Cập nhật phân trang
         }
     });
     paginationContainer.appendChild(nextButton); // Thêm nút Next
+}
+
+// Lấy dữ liệu ban đầu
+getData();
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Load header
+    fetch("../../templates/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("header").innerHTML = data;
+
+            // Gọi hàm kiểm tra trang hiện tại khi header được tải
+            setActiveNavbarLink();
+        })
+        .catch((error) => console.error("Error loading header:", error));
+
+    // Load footer
+    fetch("../../templates/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer:", error));
+});
+
+// Hàm để thiết lập lớp active cho liên kết trong thanh điều hướng
+function setActiveNavbarLink() {
+    const navbarLinks = document.querySelectorAll(".navbar__link");
+    let currentPath = window.location.pathname;
+
+    // Nếu đường dẫn là "/" thì coi như trang chủ (index.html)
+    if (currentPath === "/") {
+        currentPath = "/index.html";
+    }
+
+    let activeLinkFound = false; // Biến để kiểm tra xem đã tìm thấy liên kết active hay chưa
+
+    // Duyệt qua tất cả các liên kết
+    navbarLinks.forEach((link) => {
+        const linkPath = new URL(link.href).pathname;
+
+        if (linkPath === currentPath && !activeLinkFound) {
+            link.classList.add("navbar__link--active");
+            activeLinkFound = true; // Đánh dấu rằng đã tìm thấy liên kết active
+        } else {
+            link.classList.remove("navbar__link--active");
+        }
+    });
 }
