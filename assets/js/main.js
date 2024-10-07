@@ -47,43 +47,154 @@ document.querySelectorAll(".menu-container__btn").forEach((button) => {
     );
 });
 
-// Scroll
-// let hasAnimated = false;
-
-// window.addEventListener("scroll", function () {
-//     scrollHeader();
-// });
-
-// function scrollHeader() {
-//     const logo = document.getElementById("logo");
-//     const header = document.getElementById("header");
-//     const newspaperSpinning = [
-//         { transform: "translateY(-50px)" },
-//         { transform: "translateY(0px)" },
-//     ];
-
-//     const newspaperTiming = {
-//         duration: 900,
-//         iterations: 1,
-//     };
-
-//     if (document.documentElement.scrollTop > 800 && !hasAnimated) {
-//         logo.style.display = "none";
-//         header.style.position = "fixed";
-//         header.style.padding = "5px";
-//         header.animate(newspaperSpinning, newspaperTiming);
-//         hasAnimated = true;
-//     } else if (document.documentElement.scrollTop <= 800 && hasAnimated) {
-//         logo.style.display = "flex";
-//         header.style.position = "relative";
-//         hasAnimated = false;
-//     }
-// }
-
 // Mo Trang
 function moTrang() {
     window.location.href = "shop.html";
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Load header
+    fetch("../../templates/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("header").innerHTML = data;
+
+            // Gọi hàm kiểm tra trang hiện tại khi header được tải
+            setActiveNavbarLink();
+        })
+        .catch((error) => console.error("Error loading header:", error));
+
+    // Load footer
+    fetch("../../templates/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+            document.getElementById("footer").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading footer:", error));
+});
+
+// Hàm để thiết lập lớp active cho liên kết trong thanh điều hướng
+function setActiveNavbarLink() {
+    const navbarLinks = document.querySelectorAll(".navbar__link");
+    let currentPath = window.location.pathname;
+
+    // Nếu đường dẫn là "/" thì coi như trang chủ (index.html)
+    if (currentPath === "/") {
+        currentPath = "/index.html";
+    }
+
+    let activeLinkFound = false; // Biến để kiểm tra xem đã tìm thấy liên kết active hay chưa
+
+    // Duyệt qua tất cả các liên kết
+    navbarLinks.forEach((link) => {
+        const linkPath = new URL(link.href).pathname;
+
+        if (linkPath === currentPath && !activeLinkFound) {
+            link.classList.add("navbar__link--active");
+            activeLinkFound = true; // Đánh dấu rằng đã tìm thấy liên kết active
+        } else {
+            link.classList.remove("navbar__link--active");
+        }
+    });
+}
+
+// Điều chỉnh số lượng sản phẩm
+document.addEventListener("DOMContentLoaded", function () {
+    const plusButton = document.getElementById("plus");
+    const minusButton = document.getElementById("minus");
+    const quantityDisplay = document.getElementById("quantity");
+    const priceDisplay = document.getElementById("total");
+    let quantity = 1;
+    const basePrice = 50; // Giá ban đầu của sản phẩm
+
+    // Tăng số lượng
+    plusButton.addEventListener("click", function () {
+        quantity++;
+        quantityDisplay.textContent = quantity;
+        priceDisplay.textContent = `$${(quantity * basePrice).toFixed(2)}`;
+    });
+
+    // Giảm số lượng (nhưng không được dưới 1)
+    minusButton.addEventListener("click", function () {
+        if (quantity > 1) {
+            quantity--;
+            quantityDisplay.textContent = quantity;
+            priceDisplay.textContent = `$${(quantity * basePrice).toFixed(2)}`;
+        }
+    });
+});
+
+// Chuyển tab
+document.addEventListener("DOMContentLoaded", function () {
+    const tabItems = document.querySelectorAll(".prod-bot__item");
+    const tabContents = document.querySelectorAll(".prod-bot__text");
+
+    tabItems.forEach((item, index) => {
+        item.addEventListener("click", function () {
+            // Xóa class active khỏi tất cả các mục và nội dung
+            tabItems.forEach((tab) =>
+                tab.classList.remove("prod-bot__item--active")
+            );
+            tabContents.forEach((content) =>
+                content.classList.remove("prod-bot__text--active")
+            );
+
+            // Thêm class active cho tab và nội dung được nhấn
+            item.classList.add("prod-bot__item--active");
+            tabContents[index].classList.add("prod-bot__text--active");
+        });
+    });
+});
+
+// Chọn màu
+document.addEventListener("DOMContentLoaded", function () {
+    // Lấy các phần tử màu sắc và hình ảnh tương ứng
+    const colorElements = document.querySelectorAll(".prod-left__color");
+    const productImages = {
+        blue: document.getElementById("prodBlue"),
+        white: document.getElementById("prodWhite"),
+        silver: document.getElementById("prodSilver"),
+        gray: document.getElementById("prodGray"),
+        darkBlue: document.getElementById("prodDarkBlue"),
+        green: document.getElementById("prodGreen"),
+        pink: document.getElementById("prodPink"),
+        red: document.getElementById("prodRed"),
+    };
+
+    // Ẩn tất cả hình ảnh
+    function hideAllImages() {
+        Object.values(productImages).forEach((img) => {
+            img.classList.remove("prod-right__img--active");
+        });
+    }
+
+    // Hiển thị hình ảnh dựa trên màu được chọn
+    function showImageByColor(colorId) {
+        if (productImages[colorId]) {
+            productImages[colorId].classList.add("prod-right__img--active");
+        }
+    }
+
+    // Lắng nghe sự kiện click vào từng phần tử màu
+    colorElements.forEach((colorElement) => {
+        colorElement.addEventListener("click", function () {
+            // Loại bỏ lớp active khỏi tất cả các màu
+            colorElements.forEach((el) =>
+                el.classList.remove("prod-left__color--active")
+            );
+            // Thêm lớp active vào màu đã chọn
+            this.classList.add("prod-left__color--active");
+
+            // Lấy ID của màu được chọn
+            const colorId = this.id;
+
+            // Ẩn tất cả hình ảnh
+            hideAllImages();
+            // Hiển thị hình ảnh tương ứng với màu được chọn
+            showImageByColor(colorId);
+        });
+    });
+});
 
 // Pagination Shop
 const dataShop = "assets/js/dataShop.json";
@@ -276,49 +387,3 @@ function setupPagination() {
 
 // Lấy dữ liệu ban đầu
 getData();
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Load header
-    fetch("../../templates/header.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("header").innerHTML = data;
-
-            // Gọi hàm kiểm tra trang hiện tại khi header được tải
-            setActiveNavbarLink();
-        })
-        .catch((error) => console.error("Error loading header:", error));
-
-    // Load footer
-    fetch("../../templates/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("footer").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading footer:", error));
-});
-
-// Hàm để thiết lập lớp active cho liên kết trong thanh điều hướng
-function setActiveNavbarLink() {
-    const navbarLinks = document.querySelectorAll(".navbar__link");
-    let currentPath = window.location.pathname;
-
-    // Nếu đường dẫn là "/" thì coi như trang chủ (index.html)
-    if (currentPath === "/") {
-        currentPath = "/index.html";
-    }
-
-    let activeLinkFound = false; // Biến để kiểm tra xem đã tìm thấy liên kết active hay chưa
-
-    // Duyệt qua tất cả các liên kết
-    navbarLinks.forEach((link) => {
-        const linkPath = new URL(link.href).pathname;
-
-        if (linkPath === currentPath && !activeLinkFound) {
-            link.classList.add("navbar__link--active");
-            activeLinkFound = true; // Đánh dấu rằng đã tìm thấy liên kết active
-        } else {
-            link.classList.remove("navbar__link--active");
-        }
-    });
-}

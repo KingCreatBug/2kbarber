@@ -1,0 +1,207 @@
+@use "../abstracts";
+
+%flexItemCenter {
+    display: flex;
+    align-items: center;
+}
+
+.checkout {
+    padding: 100px 0 150px;
+    background: var(--color-white-solid);
+
+    @include abstracts.screen(lg) {
+        padding: 70px 0 100px;
+    }
+
+    &__containers {
+        margin-top: 55px;
+    }
+}
+
+.checkout-form {
+    margin-top: 48px;
+
+    &__container + &__container {
+        margin-top: 20px;
+    }
+
+    &__label {
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.67;
+
+        &--checkbox {
+            position: relative;
+            @extend %flexItemCenter;
+            gap: 8px;
+
+            color: #65685d;
+            line-height: 1.75;
+
+            &::after,
+            &::before {
+                content: "";
+            }
+
+            &::before {
+                width: 14px;
+                height: 14px;
+                border: 1px solid var(--color-black-solid);
+            }
+        }
+    }
+
+    &__checkbox:checked + &__label--checkbox::after {
+        width: 7px;
+        height: 4px;
+
+        position: absolute;
+        top: 11px;
+        left: 3px;
+        rotate: -50deg;
+
+        border-bottom: 2px solid var(--color-white-solid);
+        border-left: 2px solid var(--color-white-solid);
+    }
+
+    &__checkbox:checked + &__label--checkbox::before {
+        background: var(--color-black-solid);
+    }
+
+    &__wrap {
+        position: relative;
+        display: grid;
+        gap: 20px;
+
+        &--1item {
+            width: 48.4%;
+
+            @include abstracts.screen(lg) {
+                width: 100%;
+            }
+        }
+
+        &--2item {
+            grid-template-columns: repeat(2, 1fr);
+
+            @include abstracts.screen(lg) {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        &--3item {
+            grid-template-columns: repeat(3, 1fr);
+
+            @include abstracts.screen(lg) {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        &--checkbox {
+            margin-top: 20px;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        margin-top: 12px;
+        padding: 15px 70px 15px 15px;
+        border: 1px solid var(--color-black-solid);
+        color: var(--Text-Color-Dark);
+        font-size: 1.8rem;
+        line-height: 1.67;
+
+        &::placeholder {
+            color: var(--color-black-solid);
+            font-size: 1.8rem;
+            line-height: 1.67;
+        }
+
+        &--checkout {
+            padding: 15px;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 32px;
+        right: 25px;
+    }
+
+    &__action {
+        position: absolute;
+        top: 40px;
+        right: 25px;
+    }
+
+    &__textarea {
+        margin-top: 12px;
+        width: 100%;
+        height: 180px;
+        padding: 15px;
+        border: 1px solid var(--color-black-solid);
+        resize: none;
+
+        font-size: 1.8rem;
+        line-height: 1.67;
+
+        &::placeholder {
+            font-size: 1.8rem;
+            line-height: 1.67;
+        }
+    }
+}
+
+.checkout-right {
+    &__containers {
+        margin-top: 88px;
+        padding: 15px 0;
+        border-bottom: 1px solid var(--color-black-solid);
+        border-top: 1px solid var(--color-black-solid);
+
+        &--cart {
+            margin-top: 3px;
+            padding: 19px 0;
+        }
+    }
+
+    &__container,
+    &__total-wrap {
+        @extend %flexItemCenter;
+        justify-content: space-between;
+    }
+
+    &__container + &__container {
+        margin-top: 12px;
+    }
+
+    &__total-wrap {
+        padding: 28px 0;
+    }
+
+    &__text-total,
+    &__price-total {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &__link {
+        width: 100%;
+        margin-top: 65px;
+        padding: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        white-space: nowrap;
+        background: var(--color-yellow-48);
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}

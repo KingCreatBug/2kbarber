@@ -7,6 +7,11 @@
     line-height: 1.4;
     letter-spacing: 3px;
     text-transform: uppercase;
+
+    &--other {
+        color: var(--color-black-solid);
+        font-size: 2.8rem;
+    }
 }
 
 .section-heading-lv2 {
@@ -22,6 +27,10 @@
     font-size: 1.7rem;
     line-height: 1.6;
     letter-spacing: 0.4px;
+
+    &--other {
+        color: var(--color-black-solid);
+    }
 }
 
 .section-desc-lv2 {

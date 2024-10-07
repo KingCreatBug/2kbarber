@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="57x57"
+            href="./assets/favicon/apple-icon-57x57.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="60x60"
+            href="./assets/favicon/apple-icon-60x60.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="72x72"
+            href="./assets/favicon/apple-icon-72x72.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="76x76"
+            href="./assets/favicon/apple-icon-76x76.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="114x114"
+            href="./assets/favicon/apple-icon-114x114.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="120x120"
+            href="./assets/favicon/apple-icon-120x120.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="144x144"
+            href="./assets/favicon/apple-icon-144x144.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="152x152"
+            href="./assets/favicon/apple-icon-152x152.png"
+        />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-icon-180x180.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="./assets/favicon/android-icon-192x192.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="96x96"
+            href="./assets/favicon/favicon-96x96.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/manifest.json" />
+        <meta name="msapplication-TileColor" content="#ffffff" />
+        <meta
+            name="msapplication-TileImage"
+            content="./assets/favicon/ms-icon-144x144.png"
+        />
+        <meta name="theme-color" content="#ffffff" />
+        <!-- Embed fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+        <!-- Styles -->
+        <link rel="stylesheet" href="./assets/css/main.css" />
+        <title>2K Barbershop | Checkout</title>
+    </head>
+    <body>
+        <!-- Header -->
+        <header class="header" id="header"></header>
+
+        <!-- Main -->
+        <main>
+            <div class="checkout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6 col-lg-12">
+                            <p class="section-heading section-heading--other">
+                                Billing details
+                            </p>
+                            <form action="" class="checkout-form">
+                                <!-- Checkout form deliver -->
+                                <div class="checkout-form__container">
+                                    <label
+                                        for="checkout-deliver"
+                                        class="checkout-form__label"
+                                        >Deliver to</label
+                                    >
+                                    <div class="checkout-form__wrap">
+                                        <input
+                                            id="checkout-deliver"
+                                            type="text"
+                                            name="deliver"
+                                            class="checkout-form__input checkout-form__input--checkout"
+                                            placeholder="Residence"
+                                        />
+                                    </div>
+                                </div>
+                                <!-- Checkout form country -->
+                                <div class="checkout-form__container">
+                                    <label
+                                        for="checkout-country"
+                                        class="checkout-form__label"
+                                        >Country</label
+                                    >
+                                    <div class="checkout-form__wrap">
+                                        <input
+                                            id="checkout-country"
+                                            type="text"
+                                            name="united-states"
+                                            class="checkout-form__input"
+                                            placeholder="United States"
+                                        />
+                                        <button
+                                            class="checkout-form__action js-toggle"
+                                            toggle-target="#drop-checkout1"
+                                        >
+                                            <img
+                                                src="./assets/icons/arrow-down-complete.svg"
+                                                alt=""
+                                            />
+                                        </button>
+                                    </div>
+
+                                    <div class="checkout-form__wrap">
+                                        <input
+                                            id="checkout-country"
+                                            type="text"
+                                            name="address"
+                                            class="checkout-form__input checkout-form__input--checkout"
+                                            placeholder="Your address"
+                                        />
+                                    </div>
+                                    <div
+                                        class="checkout-form__wrap checkout-form__wrap--3item"
+                                    >
+                                        <input
+                                            id="checkout-country"
+                                            type="text"
+                                            name="city"
+                                            class="checkout-form__input checkout-form__input--checkout"
+                                            placeholder="City"
+                                        />
+                                        <div class="checkout-form__wrap">
+                                            <input
+                                                id="checkout-country"
+                                                type="text"
+                                                name="state"
+                                                class="checkout-form__input"
+                                                placeholder="District"
+                                            />
+                                        </div>
+                                        <input
+                                            id="checkout-country"
+                                            type="text"
+                                            name="zip-code"
+                                            class="checkout-form__input checkout-form__input--checkout"
+                                            placeholder="Zip code"
+                                            maxlength="6"
+                                        />
+                                    </div>
+                                    <div class="checkout-form__wrap">
+                                        <input
+                                            id="checkout-country"
+                                            type="tel"
+                                            name="phone"
+                                            class="checkout-form__input checkout-form__input--checkout"
+                                            placeholder="Your phone number"
+                                            pattern="(84|0[3|5|7|8|9])+([0-9]{8})"
+                                        />
+                                    </div>
+                                </div>
+                                <!-- Checkout form order -->
+                                <div class="checkout-form__container">
+                                    <label
+                                        for="checkout-order"
+                                        class="checkout-form__label"
+                                        >Order note
+                                        <span class="section-desc-1"
+                                            >(optional)</span
+                                        ></label
+                                    >
+                                    <div class="checkout-form__wrap">
+                                        <textarea
+                                            class="checkout-form__textarea"
+                                            name="order-note"
+                                            id="checkout-order"
+                                            cols="30"
+                                            rows="10"
+                                            placeholder="Tell us what do you think"
+                                            maxlength="200"
+                                        ></textarea>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-6 col-lg-12">
+                            <div class="checkout-right">
+                                <h3
+                                    class="section-heading section-heading--other"
+                                >
+                                    Your order
+                                </h3>
+                                <div class="checkout-right__containers">
+                                    <div class="checkout-right__container">
+                                        <p
+                                            class="checkout-right__text section-desc section-desc--other"
+                                        >
+                                            Original Price
+                                        </p>
+                                        <p
+                                            class="checkout-right__price section-desc section-desc--other"
+                                        >
+                                            $0
+                                        </p>
+                                    </div>
+                                    <div class="checkout-right__container">
+                                        <p
+                                            class="checkout-right__text section-desc section-desc--other"
+                                        >
+                                            Savings
+                                        </p>
+                                        <p
+                                            class="checkout-right__price section-desc section-desc--other"
+                                        >
+                                            $0
+                                        </p>
+                                    </div>
+                                    <div class="checkout-right__container">
+                                        <p
+                                            class="checkout-right__text section-desc section-desc--other"
+                                        >
+                                            Shipping
+                                        </p>
+                                        <p
+                                            class="checkout-right__price section-desc section-desc--other"
+                                        >
+                                            FREE
+                                        </p>
+                                    </div>
+                                    <div class="checkout-right__container">
+                                        <p
+                                            class="checkout-right__text section-desc section-desc--other"
+                                        >
+                                            Estimated Sales Tax
+                                        </p>
+                                        <p
+                                            id="original-price"
+                                            class="checkout-right__price section-desc section-desc--other"
+                                        >
+                                            $0
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="checkout-right__total-wrap">
+                                    <p class="checkout-right__text-total">
+                                        Total
+                                    </p>
+                                    <p
+                                        id="total-price"
+                                        class="checkout-right__price-total"
+                                    >
+                                        $0
+                                    </p>
+                                </div>
+
+                                <div class="checkout-right__qr-code">
+                                    <div id="qrcode"></div>
+
+                                    <script
+                                        type="text/javascript"
+                                        src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"
+                                    ></script>
+                                    <script>
+                                        new QRCode(
+                                            document.getElementById("qrcode"),
+                                            {
+                                                text: "tel:0823240040",
+                                                width: 300,
+                                                height: 300,
+                                                colorDark: "#000000",
+                                                colorLight: "#ffffff",
+                                                correctLevel:
+                                                    QRCode.CorrectLevel.H,
+                                            }
+                                        );
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="footer" id="footer"></footer>
+        <script src="./assets/js/main.js"></script>
+    </body>
+</html>

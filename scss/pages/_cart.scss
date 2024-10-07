@@ -1,0 +1,86 @@
+@use "../abstracts";
+
+%flexItemCenter {
+    display: flex;
+    align-items: center;
+}
+
+.cart {
+    background: var(--color-white-solid);
+    padding: 70px 0;
+}
+
+.cart-container {
+    &__top {
+        @extend %flexItemCenter;
+        justify-content: space-between;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--color-black-solid);
+    }
+
+    &__item,
+    &__btn,
+    &__modal,
+    &__data {
+        font-size: 1.4rem;
+        line-height: 1.71;
+    }
+
+    &__modal {
+        text-decoration: underline;
+    }
+
+    &__action {
+        @extend %flexItemCenter;
+        gap: 20px;
+    }
+
+    &__box {
+        @extend %flexItemCenter;
+        gap: 14px;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    &__box-wrap {
+        @extend %flexItemCenter;
+        gap: 12px;
+    }
+
+    &__btn {
+        width: 24px;
+        height: 24px;
+        background: #c4d1d0;
+    }
+
+    &__bottom {
+        display: flex;
+        align-items: flex-start;
+        gap: 18px;
+        margin-top: 18px;
+    }
+
+    &__wrap-img {
+        background: var(--color-black-solid);
+    }
+
+    &__img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    &__name,
+    &__price {
+        font-size: 1.8rem;
+        font-weight: 600;
+        line-height: 1.67;
+    }
+}
+
+.cart-container + .cart-container {
+    margin-top: 22px;
+}

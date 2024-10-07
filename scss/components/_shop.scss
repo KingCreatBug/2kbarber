@@ -328,6 +328,10 @@
         &:hover::before {
             animation: shine 0.5s linear;
         }
+
+        &--detail {
+            background: var(--color-white-solid);
+        }
     }
 
     &__thumb {
@@ -345,6 +349,10 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        &--detail {
+            color: var(--color-white-solid);
+        }
     }
 
     &__price {
@@ -354,6 +362,11 @@
         background: var(--color-black-solid);
         margin-top: 8px;
         padding: 5px 10px;
+
+        &--detail {
+            background: var(--color-white-solid);
+            color: var(--color-black-solid);
+        }
     }
 }
 

@@ -84,7 +84,7 @@
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
-        <title>Daddy Tattoo</title>
+        <title>2K Barbershop | product detail</title>
     </head>
     <body>
         <!-- Header -->
@@ -92,141 +92,287 @@
 
         <!-- Main -->
         <main class="container">
-            <div class="product-container prod-info-container">
-                <div class="row">
-                    <div class="col-4 col-xl-5 col-lg-12">
-                        <div class="prod-preview">
-                            <div class="prod-preview__list">
-                                <div class="prod-preview__item">
+            <div class="prod">
+                <div class="row g-5">
+                    <div class="col-6">
+                        <div class="prod-left">
+                            <h2 class="prod-left__title">BLUE POMADE</h2>
+                            <p class="prod-left__desc">
+                                HIGH HOLD - HIGH SHINE - WATER BASED - VANILLA &
+                                WOOD FRAGRANCE
+                            </p>
+                            <p class="prod-left__text">Classify:</p>
+                            <div class="prod-left__wrap">
+                                <span
+                                    id="blue"
+                                    class="prod-left__color prod-left__color--active"
+                                ></span>
+                                <span
+                                    id="white"
+                                    class="prod-left__color"
+                                ></span>
+                                <span
+                                    id="silver"
+                                    class="prod-left__color"
+                                ></span>
+                                <span id="gray" class="prod-left__color"></span>
+                                <span
+                                    id="darkBlue"
+                                    class="prod-left__color"
+                                ></span>
+                                <span
+                                    id="green"
+                                    class="prod-left__color"
+                                ></span>
+                                <span id="pink" class="prod-left__color"></span>
+                                <span id="red" class="prod-left__color"></span>
+                            </div>
+                            <div class="prod-left__wrap">
+                                <p class="prod-left__sub-title">Gloss:</p>
+                                <div class="prod-left__glosses">
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span
+                                        class="prod-left__gloss prod-left__gloss--no"
+                                    ></span>
+                                </div>
+                            </div>
+
+                            <div class="prod-left__wrap">
+                                <p class="prod-left__sub-title">Hold:</p>
+                                <div class="prod-left__glosses">
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                    <span class="prod-left__gloss"></span>
+                                </div>
+                            </div>
+
+                            <p id="total" class="prod-left__price">$50.00</p>
+                            <div class="prod-left__wrap">
+                                <p class="prod-left__sub-title">Quantity</p>
+                                <div class="prod-left__box">
+                                    <button id="minus" class="prod-left__btn">
+                                        -
+                                    </button>
+                                    <span
+                                        id="quantity"
+                                        class="prod-left__quantity"
+                                        >1</span
+                                    >
+                                    <button id="plus" class="prod-left__btn">
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="prod-left__action">
+                                <button id="addCart" class="prod-left__btn-bot">
+                                    Add to Cart
+                                </button>
+
+                                <a
+                                    href="./checkout.html"
+                                    class="prod-left__btn-bot prod-left__btn-bot--checkout"
+                                >
+                                    Proceed to Checkout
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6">
+                        <div class="prod-right">
+                            <div>
+                                <div>
                                     <img
                                         src="./assets/img/shop/prod1.png"
                                         alt=""
-                                        class="prod-preview__img"
+                                        id="prodBlue"
+                                        class="prod-right__img prod-right__img--active"
                                     />
+                                    <img
+                                        src="./assets/img/shop/prod3.png"
+                                        alt=""
+                                        id="prodWhite"
+                                        class="prod-right__img"
+                                    />
+                                    <img
+                                        src="./assets/img/shop/prod1.png"
+                                        alt=""
+                                        id="prodSilver"
+                                        class="prod-right__img"
+                                    />
+                                    <img
+                                        src="./assets/img/shop/prod5.png"
+                                        alt=""
+                                        id="prodGray"
+                                        class="prod-right__img"
+                                    />
+                                    <img
+                                        src="./assets/img/shop/prod1.png"
+                                        alt=""
+                                        id="prodDarkBlue"
+                                        class="prod-right__img"
+                                    />
+                                    <img
+                                        src="./assets/img/shop/prod1.png"
+                                        alt=""
+                                        id="prodGreen"
+                                        class="prod-right__img"
+                                    />
+                                    <img
+                                        src="./assets/img/shop/prod1.png"
+                                        alt=""
+                                        id="prodPink"
+                                        class="prod-right__img"
+                                    />
+                                    <img
+                                        src="./assets/img/shop/prod1.png"
+                                        alt=""
+                                        id="prodRed"
+                                        class="prod-right__img"
+                                    />
+                                </div>
+                            </div>
+
+                            <div class="prod-bot">
+                                <ul class="prod-bot__list">
+                                    <li
+                                        class="prod-bot__item prod-bot__item--active"
+                                    >
+                                        Description
+                                    </li>
+                                    <li class="prod-bot__item">Performance</li>
+                                    <li class="prod-bot__item">Use</li>
+                                </ul>
+
+                                <div class="prod-bot__wrap">
+                                    <p
+                                        id="des"
+                                        class="prod-bot__text prod-bot__text--active"
+                                    >
+                                        You like blue? It’s not our fault. Open
+                                        the box. Smell it? Vanilla and Woods.
+                                        People use Reuzel Blue to give their
+                                        classic hairstyles a twist, and to tame
+                                        even the most stubborn, unruly hair.
+                                    </p>
+
+                                    <p id="per" class="prod-bot__text">
+                                        Good hold, easy to wash out. Creates a
+                                        relatively high shine, enough to
+                                        highlight classic hairstyles, wet-look
+                                        styles. Addictive Vanilla & Wood scent.
+                                    </p>
+
+                                    <p id="use" class="prod-bot__text">
+                                        Take a knuckle-sized amount and smooth
+                                        it onto your palm by rubbing it between
+                                        your hands. Smooth it onto damp or dry
+                                        hair, from roots to ends, spreading the
+                                        pomade evenly and combing it through as
+                                        desired. Wow, that looks really cool.
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-8 col-xl-7 col-lg-12">
-                        <form action="" class="form">
-                            <section class="prod-info">
-                                <h1 class="prod-info__heading">
-                                    Red One Spider Hair Wax
-                                </h1>
-                                <div class="row">
-                                    <div class="col-5 col-xxl-6 col-xl-12">
-                                        <div class="prod-prop">
-                                            <img
-                                                src="./assets/icon/star.svg"
-                                                alt=""
-                                                class="prod-prop__icon"
-                                            />
-                                            <h4 class="prod-prop__title">
-                                                (3.5) 1100 reviews
-                                            </h4>
-                                        </div>
-                                        <label for="" class="prod-info__label"
-                                            >Size/Weight</label
-                                        >
-                                        <div class="filter__form-group">
-                                            <div class="prod-info__tags">
-                                                <button
-                                                    type="button"
-                                                    class="prod-info__tag prod-info__tag--active"
-                                                >
-                                                    Small
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="prod-info__tag"
-                                                >
-                                                    Medium
-                                                </button>
-                                                <button
-                                                    type="button"
-                                                    class="prod-info__tag"
-                                                >
-                                                    Large
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-7 col-xxl-6 col-xl-12">
-                                        <div class="prod-props">
-                                            <div class="prod-prop">
-                                                <img
-                                                    src="./assets/icon/compare.svg"
-                                                    alt=""
-                                                    class="prod-prop__icon"
-                                                />
-                                                <h4 class="prod-prop__title">
-                                                    Compare
-                                                </h4>
-                                            </div>
-                                            <div class="prod-prop">
-                                                <img
-                                                    src="./assets/icon/cart.svg"
-                                                    alt=""
-                                                    class="prod-prop__icon"
-                                                />
-                                                <div>
-                                                    <h4
-                                                        class="prod-prop__title"
-                                                    >
-                                                        Delivery
-                                                    </h4>
-                                                    <div
-                                                        class="prod-prop__desc"
-                                                    >
-                                                        From $6 for 1-3 days
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="prod-prop">
-                                                <img
-                                                    src="./assets/icon/bag.svg"
-                                                    alt=""
-                                                    class="prod-prop__icon"
-                                                />
-                                                <div>
-                                                    <h4
-                                                        class="prod-prop__title"
-                                                    >
-                                                        Pickup
-                                                    </h4>
-                                                    <div
-                                                        class="prod-prop__desc"
-                                                    >
-                                                        Out of 2 store, today
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="prod-info__cart">
-                                                <div class="prod-info__row">
-                                                    <span
-                                                        class="prod-info__price"
-                                                        >$59.00</span
-                                                    >
-                                                    <span class="prod-info__tax"
-                                                        >10%</span
-                                                    >
-                                                    <p
-                                                        class="prod-info__total-price"
-                                                    >
-                                                        $54.00
-                                                    </p>
-                                                </div>
+                </div>
+            </div>
+            <div class="prod-other">
+                <h3 class="prod-other__title">Related Products</h3>
 
-                                                <button class="prod-info__btn">
-                                                    Add to cart
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                        </form>
-                    </div>
+                <div class="prod-other__container">
+                    <!-- Prod Other Item 1 -->
+                    <article class="shop-menu__item">
+                        <a href="#!">
+                            <div
+                                class="shop-menu__wrap-img shop-menu__wrap-img--detail"
+                            >
+                                <img
+                                    src="./assets/img/shop/prod3.png"
+                                    alt=""
+                                    class="shop-menu__thumb"
+                                />
+                            </div>
+                            <div class="shop-menu__wrap">
+                                <h3
+                                    class="shop-menu__title shop-menu__title--detail section-heading"
+                                >
+                                    Red Pomade
+                                </h3>
+                                <p
+                                    class="shop-menu__price shop-menu__price--detail"
+                                >
+                                    $40.00
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Prod Other Item 2 -->
+                    <article class="shop-menu__item">
+                        <a href="#!">
+                            <div
+                                class="shop-menu__wrap-img shop-menu__wrap-img--detail"
+                            >
+                                <img
+                                    src="./assets/img/shop/prod5.png"
+                                    alt=""
+                                    class="shop-menu__thumb"
+                                />
+                            </div>
+                            <div class="shop-menu__wrap">
+                                <h3
+                                    class="shop-menu__title shop-menu__title--detail section-heading"
+                                >
+                                    Blue Pomade
+                                </h3>
+                                <p
+                                    class="shop-menu__price shop-menu__price--detail"
+                                >
+                                    $60.00
+                                </p>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Prod Other Item 3 -->
+                    <article class="shop-menu__item">
+                        <a href="#!">
+                            <div
+                                class="shop-menu__wrap-img shop-menu__wrap-img--detail"
+                            >
+                                <img
+                                    src="./assets/img/shop/prod1.png"
+                                    alt=""
+                                    class="shop-menu__thumb"
+                                />
+                            </div>
+                            <div class="shop-menu__wrap">
+                                <h3
+                                    class="shop-menu__title shop-menu__title--detail section-heading"
+                                >
+                                    Silver Pomade
+                                </h3>
+                                <p
+                                    class="shop-menu__price shop-menu__price--detail"
+                                >
+                                    $60.00
+                                </p>
+                            </div>
+                        </a>
+                    </article>
                 </div>
             </div>
         </main>
