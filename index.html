@@ -187,8 +187,7 @@
                             gentleman.
                         </p>
 
-                        <!-- <button class="about-content__btn btn">Book Now</button> -->
-                        <button class="btn">
+                        <button class="btn js-toggle" toggle-target="#booking">
                             <svg
                                 class="btn-icon"
                                 width="180px"
@@ -685,6 +684,101 @@
 
         <!-- Footer -->
         <footer class="footer" id="footer"></footer>
+        <!-- Modal -->
+        <div>
+            <div id="booking" class="booking hide">
+                <h2
+                    class="booking__title section-heading section-heading--other"
+                >
+                    staff scheduling
+                </h2>
+                <form action="" class="form">
+                    <div class="form__container">
+                        <div class="form-group">
+                            <label class="form-group__label" for="nameUser"
+                                >Your Name</label
+                            >
+                            <input
+                                placeholder="Johnny"
+                                type="text"
+                                class="form-group__input"
+                                id="nameUser"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-group__label" for="emailUser"
+                                >Your Email</label
+                            >
+                            <input
+                                placeholder="Email"
+                                type="email"
+                                class="form-group__input"
+                                id="emailUser"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form__container">
+                        <div class="form-group">
+                            <label class="form-group__label" for="phoneUser"
+                                >Your Phone</label
+                            >
+                            <input
+                                placeholder="Phone"
+                                type="tel"
+                                class="form-group__input"
+                                id="phoneUser"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-group__label" for="dateUser"
+                                >Appointment Date</label
+                            >
+                            <input
+                                placeholder="02/10/2024 10:00AM"
+                                type="datetime"
+                                class="form-group__input"
+                                id="dateUser"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form__container">
+                        <div class="form-group">
+                            <label class="form-group__label" for="staff"
+                                >Booking Name Staff
+                            </label>
+                            <input
+                                placeholder="Name Staff"
+                                type="staff"
+                                class="form-group__input"
+                                id="phoneUser"
+                            />
+                            <button class="booking__btn btn">
+                                Submit request
+                            </button>
+                        </div>
+
+                        <div class="form__wrap">
+                            <img
+                                src="./assets/img/qr.png"
+                                alt=""
+                                class="form__qr"
+                            />
+                            <p class="form__text">
+                                Please transfer $10 in advance to make an
+                                appointment, when you arrive at the scheduled
+                                time we will refund this amount to you
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="booking__overlay" toggle-target="#booking"></div>
+        </div>
+
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

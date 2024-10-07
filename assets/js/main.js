@@ -1,4 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // Hàm toggle
+    function initJsToggle() {
+        const toggleButtons = document.querySelectorAll(".js-toggle");
+
+        toggleButtons.forEach(function (button) {
+            button.addEventListener("click", function (e) {
+                e.preventDefault();
+                const target = button.getAttribute("toggle-target");
+                const targetElement = document.querySelector(target);
+
+                if (targetElement) {
+                    targetElement.classList.toggle("hide");
+                    targetElement.classList.toggle("show");
+                    const overlay = document.querySelector(".booking__overlay");
+                    overlay.style.display =
+                        overlay.style.display === "none" ||
+                        overlay.style.display === ""
+                            ? "block"
+                            : "none"; // Hiển thị/ẩn overlay
+                } else {
+                    document.body.textContent = `Không tìm thấy phần tử "${target}"`;
+                }
+            });
+        });
+
+        // Đóng booking nếu nhấp ra ngoài
+        document.addEventListener("click", function (e) {
+            const bookingElement = document.querySelector("#booking");
+            toggleButtons.forEach(function (button) {
+                // Kiểm tra xem có nhấp vào nút toggle hoặc phần tử booking không
+                if (
+                    !button.contains(e.target) &&
+                    bookingElement &&
+                    !bookingElement.contains(e.target)
+                ) {
+                    bookingElement.classList.remove("show");
+                    bookingElement.classList.add("hide");
+                    const overlay = document.querySelector(".booking__overlay");
+                    overlay.style.display = "none"; // Ẩn overlay
+                }
+            });
+        });
+    }
+
+    initJsToggle();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
     // Load header
     fetch("../../templates/header.html")
         .then((response) => response.text())
@@ -16,6 +64,47 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch((error) => console.error("Error loading footer:", error));
 });
 
+/**
+ * JS toggle
+ *
+ * Cách dùng:
+ * <button class="js-toggle" toggle-target="#box">Click</button>
+ * <div id="box">Content show/hide</div>
+ */
+
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+window.addEventListener("template-loaded", initJsToggle);
+
+function initJsToggle() {
+    $$(".js-toggle").forEach((button) => {
+        const target = button.getAttribute("toggle-target");
+        if (!target) {
+            document.body.innerText = `Cần thêm toggle-target cho: ${button.outerHTML}`;
+        }
+        button.onclick = (e) => {
+            e.preventDefault();
+
+            if (!$(target)) {
+                return (document.body.innerText = `Không tìm thấy phần tử "${target}"`);
+            }
+            const isHidden = $(target).classList.contains("hide");
+
+            requestAnimationFrame(() => {
+                $(target).classList.toggle("hide", !isHidden);
+                $(target).classList.toggle("show", isHidden);
+            });
+        };
+        document.onclick = function (e) {
+            if (!e.target.closest(target)) {
+                const isHidden = $(target).classList.contains("hide");
+                if (!isHidden) {
+                    button.click();
+                }
+            }
+        };
+    });
+}
 // Menu
 // Generic function to show or hide elements based on event type
 function toggleVisibility(eventType, elementId) {
