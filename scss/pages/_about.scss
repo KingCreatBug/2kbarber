@@ -36,6 +36,12 @@
         @include abstracts.screen(md) {
             width: 100%;
         }
+
+        &--center {
+            @include abstracts.screen(md) {
+                text-align: center;
+            }
+        }
     }
 
     &__meet {
@@ -52,6 +58,10 @@
         align-items: center;
         gap: 38px;
         margin-top: 70px;
+
+        @include abstracts.screen(lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
 
         @include abstracts.screen(sm) {
             grid-template-columns: 1fr;

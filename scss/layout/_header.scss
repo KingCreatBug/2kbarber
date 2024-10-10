@@ -12,9 +12,18 @@
     padding: 20px 135px;
     background: transparent;
 
+    @include abstracts.screen(xl) {
+        padding: 20px 35px;
+    }
+
     &__inner {
         @extend %flexItemCenter;
         justify-content: space-between;
+    }
+
+    &__icon {
+        width: 24px;
+        height: 24px;
     }
 
     &__logo {
@@ -22,6 +31,10 @@
         font-weight: 600;
         color: var(--color-yellow-48);
         font-family: "Subjectivity";
+
+        @include abstracts.screen(md) {
+            font-size: 1.8rem;
+        }
     }
 
     &__background {
@@ -29,6 +42,10 @@
         width: 100%;
         height: 120vh;
         object-fit: cover;
+
+        @include abstracts.screen(lg) {
+            height: 80vh;
+        }
     }
 
     &__container {
@@ -46,6 +63,11 @@
 
     &__list {
         @extend %flexItemCenter;
+
+        @include abstracts.screen(lg) {
+            flex-direction: column;
+            align-items: flex-start;
+        }
     }
 
     &__item {
@@ -64,10 +86,19 @@
 
         transition: 0.25s linear;
 
+        @include abstracts.screen(lg) {
+            padding-left: 0;
+        }
+
         &--active,
         &:hover {
             background: var(--color-white-solid);
             color: var(--color-black-solid);
+
+            @include abstracts.screen(lg) {
+                background: initial;
+                color: var(--color-white-solid);
+            }
         }
     }
 }
@@ -86,6 +117,17 @@
     backdrop-filter: blur(7px);
     opacity: 0.8;
 
+    @include abstracts.screen(lg) {
+        translate: 0 -40%;
+        left: 30px;
+    }
+
+    &__title {
+        @include abstracts.screen(lg) {
+            font-size: 1.6rem !important;
+        }
+    }
+
     &__form {
         margin-top: 28px;
     }
@@ -99,6 +141,10 @@
         color: var(--color-white-solid);
         font-size: 1.6rem;
 
+        @include abstracts.screen(lg) {
+            width: 100%;
+        }
+
         &::placeholder {
             color: var(--color-white-solid);
         }
@@ -111,6 +157,10 @@
 
         &--small {
             width: 194px;
+
+            @include abstracts.screen(lg) {
+                width: 100%;
+            }
         }
     }
 
@@ -122,6 +172,10 @@
         @extend %flexItemCenter;
         gap: 16px;
         margin-top: 16px;
+
+        @include abstracts.screen(lg) {
+            flex-direction: column;
+        }
     }
 
     &__btn {
@@ -146,6 +200,19 @@
     display: flex;
     width: 70%;
 
+    @include abstracts.screen(xxl) {
+        width: 80%;
+    }
+
+    @include abstracts.screen(xl) {
+        width: 100%;
+        right: 20px;
+    }
+
+    @include abstracts.screen(lg) {
+        bottom: 30%;
+    }
+
     &__title {
         text-align: end;
         font-size: 8rem;
@@ -155,6 +222,10 @@
         background: -webkit-linear-gradient(var(--color-white-solid), #333);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+
+        @include abstracts.screen(xl) {
+            font-size: 6.8rem;
+        }
     }
 }
 
@@ -177,6 +248,10 @@
         font-size: 1.8rem;
         font-weight: 500;
 
+        @include abstracts.screen(lg) {
+            display: inline-block;
+        }
+
         &:hover {
             opacity: 0.8;
         }
@@ -197,5 +272,52 @@
         border: 1px solid var(--color-black-solid);
 
         font-weight: 600;
+    }
+}
+
+.mobile {
+    position: fixed;
+    inset: 0 50% 0 0;
+    background: var(--color-black-solid);
+    z-index: 99;
+    padding: 20px 50px;
+    translate: -100%;
+    transition: translate 0.5s;
+
+    @include abstracts.screen(lg) {
+        padding: 20px 30px;
+    }
+
+    @include abstracts.screen(sm) {
+        inset: 0 20% 0 0;
+    }
+
+    &.show {
+        translate: 0;
+        box-shadow: 0px 40px 90px 20px var(--color-black-solid);
+    }
+
+    &.hide ~ &__overlay {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &.show ~ &__overlay {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    &__overlay {
+        visibility: hidden;
+        opacity: 0;
+
+        @include abstracts.screen(lg) {
+            visibility: visible;
+            opacity: 1;
+            position: fixed;
+            inset: 0;
+            z-index: 88;
+            background: rgba($color: #fff, $alpha: 0.4);
+        }
     }
 }

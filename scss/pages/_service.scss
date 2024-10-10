@@ -6,7 +6,7 @@
 }
 
 .service {
-    padding: 100px;
+    padding: 100px 0;
     background: var(--color-white-solid);
 
     &__inner {
@@ -39,6 +39,10 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 45px;
         margin-top: 45px;
+
+        @include abstracts.screen(md) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__wrap {

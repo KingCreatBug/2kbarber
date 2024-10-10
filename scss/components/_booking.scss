@@ -2,13 +2,18 @@
 
 .booking {
     position: fixed;
-    inset: 15%;
+    inset: 10%;
     background: var(--color-white-solid);
     z-index: 99;
     padding: 20px 50px;
     translate: -150%;
     transition: translate 0.5s;
     border-radius: 20px;
+    overflow-y: auto;
+
+    @include abstracts.screen(lg) {
+        padding: 10px 20px;
+    }
 
     &.show {
         translate: 0;

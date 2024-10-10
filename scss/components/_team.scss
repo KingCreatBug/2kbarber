@@ -12,11 +12,16 @@
 
     &__title {
         font-size: 4rem;
+        text-align: center;
     }
 
     &__desc {
         width: 70%;
         text-align: center;
+
+        @include abstracts.screen(lg) {
+            width: 100%;
+        }
     }
 }
 
@@ -25,6 +30,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 70px;
+
+    @include abstracts.screen(lg) {
+        grid-template-columns: 1fr;
+    }
 }
 
 .team-container {

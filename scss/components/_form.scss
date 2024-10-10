@@ -12,16 +12,29 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 50px;
+
+        @include abstracts.screen(lg) {
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
     }
 
     &__container + &__container {
         margin-top: 22px;
+
+        @include abstracts.screen(lg) {
+            margin-top: 12px;
+        }
     }
 
     &__wrap {
         display: flex;
         align-items: end;
         gap: 10px;
+
+        @include abstracts.screen(lg) {
+            flex-direction: column;
+        }
     }
 
     &__qr {

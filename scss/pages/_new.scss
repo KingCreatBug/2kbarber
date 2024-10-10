@@ -102,6 +102,10 @@
     background-repeat: no-repeat;
     background-size: cover;
 
+    @include abstracts.screen(lg) {
+        padding-top: 100px;
+    }
+
     &--detail {
         padding-top: 52px;
     }
@@ -111,12 +115,6 @@
         &:hover {
             scale: 0.9;
         }
-
-        &--small {
-            @include abstracts.screen(lg) {
-                margin-top: 150px;
-            }
-        }
     }
 
     &__img {
@@ -125,9 +123,6 @@
 
         &--large {
             height: 570px;
-            @include abstracts.screen(lg) {
-                height: 100%;
-            }
         }
 
         &--medium {
@@ -136,10 +131,6 @@
 
         &--small {
             height: 270px;
-
-            @include abstracts.screen(lg) {
-                height: 100%;
-            }
         }
     }
 
@@ -285,7 +276,7 @@
     margin: 150px 0;
 
     @include abstracts.screen(lg) {
-        margin-top: 100px;
+        margin: 100px 0;
     }
 
     &__title {

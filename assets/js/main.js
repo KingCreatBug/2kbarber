@@ -1,79 +1,10 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Hàm toggle
-    function initJsToggle() {
-        const toggleButtons = document.querySelectorAll(".js-toggle");
-
-        toggleButtons.forEach(function (button) {
-            button.addEventListener("click", function (e) {
-                e.preventDefault();
-                const target = button.getAttribute("toggle-target");
-                const targetElement = document.querySelector(target);
-
-                if (targetElement) {
-                    targetElement.classList.toggle("hide");
-                    targetElement.classList.toggle("show");
-                    const overlay = document.querySelector(".booking__overlay");
-                    overlay.style.display =
-                        overlay.style.display === "none" ||
-                        overlay.style.display === ""
-                            ? "block"
-                            : "none"; // Hiển thị/ẩn overlay
-                } else {
-                    document.body.textContent = `Không tìm thấy phần tử "${target}"`;
-                }
-            });
-        });
-
-        // Đóng booking nếu nhấp ra ngoài
-        document.addEventListener("click", function (e) {
-            const bookingElement = document.querySelector("#booking");
-            toggleButtons.forEach(function (button) {
-                // Kiểm tra xem có nhấp vào nút toggle hoặc phần tử booking không
-                if (
-                    !button.contains(e.target) &&
-                    bookingElement &&
-                    !bookingElement.contains(e.target)
-                ) {
-                    bookingElement.classList.remove("show");
-                    bookingElement.classList.add("hide");
-                    const overlay = document.querySelector(".booking__overlay");
-                    overlay.style.display = "none"; // Ẩn overlay
-                }
-            });
-        });
-    }
-
-    initJsToggle();
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    // Load header
-    fetch("../../templates/header.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("header").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading header:", error));
-
-    // Load footer
-    fetch("../../templates/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("footer").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading footer:", error));
-});
-
 /**
  * JS toggle
  *
  * Cách dùng:
- * <button class="js-toggle" toggle-target="#box">Click</button>
+ * <button class="js-toggle" toggle-target="#box" >Click</button>
  * <div id="box">Content show/hide</div>
  */
-
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
 window.addEventListener("template-loaded", initJsToggle);
 
 function initJsToggle() {
@@ -105,6 +36,7 @@ function initJsToggle() {
         };
     });
 }
+
 // Menu
 // Generic function to show or hide elements based on event type
 function toggleVisibility(eventType, elementId) {
@@ -141,52 +73,6 @@ function moTrang() {
     window.location.href = "shop.html";
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // Load header
-    fetch("../../templates/header.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("header").innerHTML = data;
-
-            // Gọi hàm kiểm tra trang hiện tại khi header được tải
-            setActiveNavbarLink();
-        })
-        .catch((error) => console.error("Error loading header:", error));
-
-    // Load footer
-    fetch("../../templates/footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-            document.getElementById("footer").innerHTML = data;
-        })
-        .catch((error) => console.error("Error loading footer:", error));
-});
-
-// Hàm để thiết lập lớp active cho liên kết trong thanh điều hướng
-function setActiveNavbarLink() {
-    const navbarLinks = document.querySelectorAll(".navbar__link");
-    let currentPath = window.location.pathname;
-
-    // Nếu đường dẫn là "/" thì coi như trang chủ (index.html)
-    if (currentPath === "/") {
-        currentPath = "/index.html";
-    }
-
-    let activeLinkFound = false; // Biến để kiểm tra xem đã tìm thấy liên kết active hay chưa
-
-    // Duyệt qua tất cả các liên kết
-    navbarLinks.forEach((link) => {
-        const linkPath = new URL(link.href).pathname;
-
-        if (linkPath === currentPath && !activeLinkFound) {
-            link.classList.add("navbar__link--active");
-            activeLinkFound = true; // Đánh dấu rằng đã tìm thấy liên kết active
-        } else {
-            link.classList.remove("navbar__link--active");
-        }
-    });
-}
-
 // Điều chỉnh số lượng sản phẩm
 document.addEventListener("DOMContentLoaded", function () {
     const plusButton = document.getElementById("plus");
@@ -197,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const basePrice = 50; // Giá ban đầu của sản phẩm
 
     // Tăng số lượng
-    plusButton.addEventListener("click", function () {
+    plusButton.addEventListener("click", () => {
         quantity++;
         quantityDisplay.textContent = quantity;
         priceDisplay.textContent = `$${(quantity * basePrice).toFixed(2)}`;

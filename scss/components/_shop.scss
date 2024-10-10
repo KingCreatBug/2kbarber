@@ -18,6 +18,10 @@
     background-size: cover;
     padding: 116px 0;
 
+    @include abstracts.screen(lg) {
+        padding: 70px 0;
+    }
+
     &__title {
         text-align: center;
         font-size: 3.8rem;
@@ -29,6 +33,14 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
+
+        @include abstracts.screen(xl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include abstracts.screen(md) {
+            grid-template-columns: 1fr;
+        }
     }
 
     &__btn {
@@ -63,6 +75,10 @@
         cursor: pointer;
         rotate: 45deg;
         transition: 0.4s linear;
+
+        @include abstracts.screen(lg) {
+            rotate: 0deg;
+        }
 
         &:hover {
             rotate: 90deg;
@@ -105,6 +121,22 @@
 
         font-size: 12rem;
         opacity: 0.6;
+
+        @include abstracts.screen(xl) {
+            font-size: 9rem;
+        }
+
+        @include abstracts.screen(lg) {
+            font-size: 6rem;
+        }
+
+        @include abstracts.screen(md) {
+            font-size: 3.8rem;
+        }
+
+        @include abstracts.screen(sm) {
+            font-size: 2.5rem;
+        }
     }
 
     &__track {
@@ -116,6 +148,10 @@
     &__item {
         height: 90vh;
         object-fit: cover;
+
+        @include abstracts.screen(lg) {
+            height: 45vh;
+        }
     }
 }
 
@@ -127,6 +163,12 @@
 .shop-top {
     @extend %flexItemCenter;
     justify-content: space-between;
+
+    @include abstracts.screen(lg) {
+        flex-direction: column-reverse;
+        align-items: start;
+        gap: 20px;
+    }
 
     &__filter {
         padding: 16px 38px;
@@ -293,6 +335,10 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 
+    @include abstracts.screen(lg) {
+        gap: 10px;
+    }
+
     &__item {
         width: 100%;
     }
@@ -352,6 +398,11 @@
 
         &--detail {
             color: var(--color-white-solid);
+        }
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+            letter-spacing: 1px;
         }
     }
 

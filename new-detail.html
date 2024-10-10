@@ -84,11 +84,16 @@
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- JS load -->
+        <script src="./assets/js/load.js"></script>
         <title>2K Barbershop | New</title>
     </head>
     <body>
         <!-- Header -->
-        <header class="header" id="header"></header>
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "./templates/header.html");
+        </script>
 
         <!-- Main -->
         <main class="new-container new-container--detail">
@@ -358,10 +363,24 @@
                                     </h3>
                                 </a>
                             </div>
-                            <button
-                                class="d-none d-lg-block new__btn btn-1 btn-small"
-                            >
-                                Load More
+                            <button class="btn">
+                                <svg
+                                    class="btn-icon"
+                                    width="180px"
+                                    height="60px"
+                                    viewBox="0 0 180 60"
+                                    class="border"
+                                >
+                                    <polyline
+                                        points="179,1 179,59 1,59 1,1 179,1"
+                                        class="bg-line"
+                                    />
+                                    <polyline
+                                        points="179,1 179,59 1,59 1,1 179,1"
+                                        class="hl-line"
+                                    />
+                                </svg>
+                                <span class="btn-span">Load more</span>
                             </button>
                         </div>
                     </div>
@@ -370,7 +389,10 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer" id="footer"></footer>
+        <footer id="footer" class="footer"></footer>
+        <script>
+            load("#footer", "./templates/footer.html");
+        </script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

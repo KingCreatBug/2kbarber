@@ -84,11 +84,16 @@
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- JS load -->
+        <script src="./assets/js/load.js"></script>
         <title>2K Barbershop</title>
     </head>
     <body>
         <!-- Header -->
-        <header class="header" id="header"></header>
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "./templates/header.html");
+        </script>
 
         <!-- Main -->
         <main>
@@ -131,7 +136,7 @@
                         </div>
                     </form>
                 </div>
-                <section class="header-content">
+                <section class="header-content d-lg-none">
                     <h2 class="header-content__title">
                         Where tradition meets modern style
                     </h2>
@@ -473,7 +478,7 @@
                                     class="shop-item__img"
                                 />
                             </div>
-                            <p class="shop-item__desc section-desc">
+                            <p class="shop-item__desc section-desc d-lg-none">
                                 Red One hair wax holds hair well, is not sticky,
                                 fragrant, and natural.
                             </p>
@@ -491,7 +496,7 @@
                                     class="shop-item__img"
                                 />
                             </div>
-                            <p class="shop-item__desc section-desc">
+                            <p class="shop-item__desc section-desc d-lg-none">
                                 Natulique has strong hold, is not sticky, and is
                                 natural.
                             </p>
@@ -509,7 +514,7 @@
                                     class="shop-item__img"
                                 />
                             </div>
-                            <p class="shop-item__desc section-desc">
+                            <p class="shop-item__desc section-desc d-lg-none">
                                 Red one wax has strong hold, is not sticky, and
                                 is natural.
                             </p>
@@ -527,7 +532,7 @@
                                     class="shop-item__img"
                                 />
                             </div>
-                            <p class="shop-item__desc section-desc">
+                            <p class="shop-item__desc section-desc d-lg-none">
                                 Red one wax has strong hold, is not sticky, and
                                 is natural.
                             </p>
@@ -683,7 +688,11 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer" id="footer"></footer>
+        <footer id="footer" class="footer"></footer>
+        <script>
+            load("#footer", "./templates/footer.html");
+        </script>
+
         <!-- Modal -->
         <div>
             <div id="booking" class="booking hide">
@@ -761,7 +770,7 @@
                             </button>
                         </div>
 
-                        <div class="form__wrap">
+                        <div class="form__wrap d-lg-none">
                             <img
                                 src="./assets/img/qr.png"
                                 alt=""

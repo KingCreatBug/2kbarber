@@ -84,11 +84,16 @@
         <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
         <!-- Styles -->
         <link rel="stylesheet" href="./assets/css/main.css" />
+        <!-- JS load -->
+        <script src="./assets/js/load.js"></script>
         <title>2K Barbershop | New</title>
     </head>
     <body>
         <!-- Header -->
-        <header class="header" id="header"></header>
+        <header id="header" class="header"></header>
+        <script>
+            load("#header", "./templates/header.html");
+        </script>
 
         <!-- Main -->
         <main>
@@ -116,7 +121,7 @@
             </div>
             <div class="new-container">
                 <div class="container">
-                    <div class="row">
+                    <div class="row g-3">
                         <a
                             href="./new-detail.html"
                             class="col-6 col-lg-12 new-container__item"
@@ -325,7 +330,10 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer" id="footer"></footer>
+        <footer id="footer" class="footer"></footer>
+        <script>
+            load("#footer", "./templates/footer.html");
+        </script>
         <script src="./assets/js/main.js"></script>
     </body>
 </html>

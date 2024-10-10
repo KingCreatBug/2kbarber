@@ -1,8 +1,11 @@
 <div class="header__inner">
+    <button class="js-toggle d-none d-lg-block" toggle-target="#boxNav">
+        <img class="header__icon" src="./assets/icon/bar.svg" alt="" />
+    </button>
     <a href="/" class="header__logo section-heading">
         <h1>2K Barbershop</h1>
     </a>
-    <nav class="navbar">
+    <nav class="navbar d-lg-none">
         <ul class="navbar__list">
             <li class="navbar__item">
                 <a href="./index.html" class="navbar__link navbar__link--active"
@@ -25,7 +28,9 @@
     </nav>
 
     <div class="header-action">
-        <a href="./contact.html" class="header-action__btn">Contact us</a>
+        <a href="./contact.html" class="header-action__btn d-lg-none"
+            >Contact us</a
+        >
         <a href="./cart.html" class="header-action__cart">
             <img
                 src="./assets/icon/cart.svg"
@@ -35,4 +40,33 @@
             <span id="cart" class="header-action__quantity">3</span>
         </a>
     </div>
+</div>
+
+<div>
+    <div id="boxNav" class="mobile hide d-none d-lg-block">
+        <a href="/" class="header__logo section-heading">
+            <h1>2K Barbershop</h1>
+        </a>
+        <ul class="navbar__list">
+            <li class="navbar__item">
+                <a href="./index.html" class="navbar__link navbar__link--active"
+                    >Home</a
+                >
+            </li>
+            <li class="navbar__item">
+                <a href="./service.html" class="navbar__link">Service</a>
+            </li>
+            <li class="navbar__item">
+                <a href="./about.html" class="navbar__link">About us</a>
+            </li>
+            <li class="navbar__item">
+                <a href="./new.html" class="navbar__link">News</a>
+            </li>
+            <li class="navbar__item">
+                <a href="./shop.html" class="navbar__link">Shop</a>
+            </li>
+        </ul>
+        <a href="./contact.html" class="header-action__btn">Contact us</a>
+    </div>
+    <div class="mobile__overlay js-toggle" toggle-target="#boxNav"></div>
 </div>
